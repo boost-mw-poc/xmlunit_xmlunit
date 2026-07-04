@@ -85,4 +85,12 @@ public class IsDateTimePlaceholderHandlerTest {
             Locale.setDefault(l);
         }
     }
+
+    @Test
+    public void shouldParsePatternWithExplicitLocale() {
+        assertThat(placeholderHandler.evaluate("24 Juni 2023", "dd MMMM yyyy", "de"),
+                   equalTo(ComparisonResult.EQUAL));
+        assertThat(placeholderHandler.evaluate("24 Juni 2023", "dd MMMM yyyy", "en"),
+                   equalTo(ComparisonResult.DIFFERENT));
+    }
 }

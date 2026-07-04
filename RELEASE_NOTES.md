@@ -13,6 +13,12 @@
 
   PRs [#333](https://github.com/xmlunit/xmlunit/pull/333)by [@jmestwa-coder](https://github.com/jmestwa-coder)
 
+* `IsDateTimePlaceholderHandler` now parses the explicit and ISO date formats using `Locale.US` rather than the JVM
+  default locale so results no longer depend on the host locale. An optional second argument allows specifying a
+  different locale as a BCP 47 language tag.
+
+  PR [#335](https://github.com/xmlunit/xmlunit/pull/335) by [@jmestwa-coder](https://github.com/jmestwa-coder)
+
 ## XMLUnit for Java 2.12.0 - /Released 2026-05-31/
 
 * bumped xmlunit-assertj3's dependency on assert to 3.27.7.

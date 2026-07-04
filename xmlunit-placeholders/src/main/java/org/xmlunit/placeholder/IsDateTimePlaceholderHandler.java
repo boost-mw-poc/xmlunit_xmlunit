@@ -51,10 +51,21 @@ public class IsDateTimePlaceholderHandler implements PlaceholderHandler {
         return PLACEHOLDER_NAME;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The first optional argument is the date/time pattern, the
+     * second optional argument is the locale used to parse it, given
+     * as a BCP 47 language tag (for example {@code de} or {@code
+     * fr-FR}). When no locale is given {@link Locale#US} is used.</p>
+     */
     @Override
     public ComparisonResult evaluate(final String testText, final String... args) {
-        if (args != null && args.length == 1) {
-            return canParse(new SimpleDateFormat(args[0], Locale.US), testText)
+        if (args != null && args.length >= 1) {
+            final Locale locale = args.length >= 2 && args[1] != null && !"".equals(args[1])
+                ? Locale.forLanguageTag(args[1])
+                : Locale.US;
+            return canParse(new SimpleDateFormat(args[0], locale), testText)
                 ? ComparisonResult.EQUAL
                 : ComparisonResult.DIFFERENT;
         }
