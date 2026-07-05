@@ -93,4 +93,11 @@ public class IsDateTimePlaceholderHandlerTest {
         assertThat(placeholderHandler.evaluate("24 Juni 2023", "dd MMMM yyyy", "en"),
                    equalTo(ComparisonResult.DIFFERENT));
     }
+
+    @Test
+    public void shouldUseUsLocaleWithTwoArgsWhenSecondIsEmpty() {
+        // When second argument is empty string, should fall back to Locale.US
+        assertThat(placeholderHandler.evaluate("24 June 2023", "dd MMMM yyyy", ""),
+                   equalTo(ComparisonResult.EQUAL));
+    }
 }
