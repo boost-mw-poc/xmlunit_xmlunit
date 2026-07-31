@@ -1,5 +1,7 @@
 # Release Notes
 
+## XMLUnit for Java 2.13.1 - /not released, yet/
+
 ## XMLUnit for Java 2.13.0 - /Released 2026-07-31/
 
 * added explicit settings to the `Validator` classes that disable (external) DTD loading during validation. The default
