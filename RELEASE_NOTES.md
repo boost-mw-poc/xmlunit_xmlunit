@@ -1,6 +1,8 @@
 # Release Notes
 
-## XMLUnit for Java 2.12.1 - /not released, yet/
+## XMLUnit for Java 2.13.1 - /not released, yet/
+
+## XMLUnit for Java 2.13.0 - /Released 2026-07-31/
 
 * added explicit settings to the `Validator` classes that disable (external) DTD loading during validation. The default
   remains to allow loading of external content as this is often a requirement during validation.
@@ -11,7 +13,7 @@
 * added constructor overloads to `JAXPXPathEngine` to allow specifying the `DocumentBuilderFactory` used for the
   `Source` overloads of the `selectNodes` and `evaluate` methods.
 
-  PRs [#333](https://github.com/xmlunit/xmlunit/pull/333)by [@jmestwa-coder](https://github.com/jmestwa-coder)
+  PRs [#333](https://github.com/xmlunit/xmlunit/pull/333) by [@jmestwa-coder](https://github.com/jmestwa-coder)
 
 * `IsDateTimePlaceholderHandler` now parses the explicit and ISO date formats using `Locale.US` rather than the JVM
   default locale so results no longer depend on the host locale. An optional second argument allows specifying a
